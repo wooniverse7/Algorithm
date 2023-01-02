@@ -46,7 +46,7 @@ public class Main {
         for (int x = 0; x < M-7; x++) {
             for (int y = 0; y < N-7; y++) {
                 int cntW = 0;
-                int cntB = 0;
+                //int cntB = 0;
                 int answer = 0;
 
                 //검흰판에서 board의 색과 다른 부분 개수 구하기
