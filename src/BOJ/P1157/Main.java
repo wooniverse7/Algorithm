@@ -15,6 +15,7 @@ public class Main {
 
         for (int i = 0; i < str.length(); i++) {
             abc[str.charAt(i) - 'A']++; // 해당 문자의 idx 크기 1 증가
+            // acbaae  abc[ 3 1 1 0 1 ... ]
         }
 
         int max = -1;
@@ -24,6 +25,7 @@ public class Main {
                 max = abc[i];
                 ch = (char) (i + 65); // 아스키 코드 char로 형변환
             }else if(abc[i] == max) // 중간에 같은 것이 있더라도 마지막까지 탐색해서 제대로 된 답이 나옴
+                // 3 1 2 2 3 1 2 1 4 2
                 ch = '?';
         }
 
