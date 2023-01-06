@@ -12,18 +12,23 @@ public class Main {
         int m = sc.nextInt();
 
         Queue<Integer> q = new LinkedList<>();
-        for (int i = 1; i < n; i++) {
-            int tmp = m*i; // 3 6 9-7 12-7 15-7-7
-            while(tmp >= n){
-                tmp -= 7;
-            }
-            q.add(tmp);
+        for(int i = 1; i <= n; i++) {
+            q.add(i);
         }
-        String str = q.toString();
-        StringBuilder sb = new StringBuilder(str);
-        sb.setCharAt(0, '<');
-        sb.setCharAt(sb.length()-1, '>');
+        StringBuilder sb = new StringBuilder();
+        sb.append('<');
 
+        while(q.size() > 1) {
+
+            for(int i = 0; i < m - 1; i++) {
+                int val = q.poll();
+                q.offer(val);
+            }
+
+            sb.append(q.poll()).append(", ");
+        }
+
+        sb.append(q.poll()).append('>');
         System.out.println(sb);
 
     }
