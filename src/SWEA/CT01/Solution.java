@@ -1,20 +1,15 @@
-package SWEA.CodingTest;
+package SWEA.CT01;
 
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
-/*
-   사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
-   이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
- */
+import java.util.Scanner;
+
 class Solution
 {
 
     static int[][] map;
-    static int N;
-    static int M;
+    static int r;
+    static int c;
     static boolean[] alpahbet = new boolean[26]; // 썼던 알파벳인지
     static int[] dx = {-1, 1, 0, 0}; // x방향배열 - 상하
     static int[] dy = {0, 0, -1, 1}; // y방향배열 - 좌우
@@ -31,32 +26,31 @@ class Solution
                 int nx = x + dx[i];
                 int ny = y + dy[i];
 
-                if(nx >= 0 && ny >= 0 && nx < N && ny < M){
+                if(nx >= 0 && ny >= 0 && nx < r && ny < c){
                     dfs(nx, ny, cnt+1); // count++ 하면 안됨
                 }
             }
             alpahbet[map[x][y]] = false;
         }
-   }
+    }
 
-    public static void main(String args[]) throws Exception
+    public static void main(String args[])
     {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
 
         StringBuilder sb = new StringBuilder();
         for (int t = 1; t <= T; t++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
 
-            N = Integer.parseInt(st.nextToken());
-            M = Integer.parseInt(st.nextToken());
+            r = sc.nextInt();
+            c = sc.nextInt();
 
-            map = new int[N][M];
-            for (int i = 0; i < N; i++) {
-                String s = br.readLine();
-                for (int j = 0; j < M; j++) {
+            map = new int[r][c];
+            for (int i = 0; i < r; i++) {
+                String s = sc.next();
+                for (int j = 0; j < c; j++) {
                     map[i][j] = s.charAt(j) - 'A';
                 }
             }
@@ -66,5 +60,4 @@ class Solution
         }
         System.out.println(sb);
     }
-
 }
