@@ -1,21 +1,27 @@
 package BOJ.Test;
+import java.util.*;
 
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "banana";
+        System.out.println(computeSquareRoot(144));
+    }
 
-        HashMap<Character, Integer> hm = new HashMap<>();
-        for(int i = 0; i < str.length(); i++){
-            char c = str.charAt(i);
-            if(hm.containsKey(c)){
-                int cnt = hm.get(c);
-                hm.put(c, ++cnt);
-            }
-            else hm.put(c, 1);
-        }
+    static final int PRECISION = 10;
 
-        System.out.println(hm);
+    // 바빌로니아 방법
+    static public String computeSquareRoot(int num) {
+        // TODO:
+        double x = PRECISION;
+
+        // 원하는 정밀도 만큼 반복한다.
+        for (int i = 0; i < PRECISION; i++)
+            x = 0.5 * (num / x + x);
+
+        x = Math.round(x*100) / 100.0;
+        String rst = Double.toString(x);
+        if(rst.charAt(rst.length()-1) == '0')
+            rst = rst + "0";
+        return rst;
     }
 }
