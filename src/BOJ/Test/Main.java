@@ -1,62 +1,47 @@
 package BOJ.Test;
-import java.io.*;
-import java.util.*;
 
+import java.util.StringTokenizer;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 public class Main {
 
-    static int sum = -1;
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
-
-
-        while(true){
+        int T = Integer.parseInt(br.readLine());
+        while(T-- > 0){
             st = new StringTokenizer(br.readLine());
 
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            int c = Integer.parseInt(st.nextToken());
+            int H = Integer.parseInt(st.nextToken()); // 층수
+            int W = Integer.parseInt(st.nextToken()); // 층의 방 수
+            int N = Integer.parseInt(st.nextToken()); // 몇 번째 손님
 
-            if(a == 0 && b == 0 && c == 0) break;
+            int[][] hotel = new int[H+1][W+1];
+            int cnt = 1;
+            int roomH = 0;
+            int roomW = 0;
+            for (int i = 1; i <= W; i++) {
+                for (int j = 1; j <= H; j++) {
+                    // 높이부터 채우고 다음칸으로 넘어가야 하는데
+                    hotel[j][i] = cnt;
+                    if(cnt == N){
+                        roomH = j;
+                        roomW = i;
+                    }
+                    cnt += 1;
 
-            if((a * a + b * b) == c * c) {
-                System.out.println("right");
-            }
-            else if(a * a == (b * b + b * b)) {
-                System.out.println("right");
-            }
-            else if(b * b == (c * c + a * a)) {
-                System.out.println("right");
-            }
-            else {
-                System.out.println("wrong");
+                }
             }
 
-//            int[] arr = new int[3];
-//            for (int i = 0; i < 3; i++) {
-//                arr[i] = Integer.parseInt(st.nextToken());
-//            }
-//
-//            // 탈출
-//            for (int i = 0; i < 3; i++) {
-//                sum += arr[i];
-//            }
-//            System.out.println(sum);
-//            if(sum == 0) break;
-//
-//            Arrays.sort(arr);
-//            if(arr[2] * arr[2] == arr[1] * arr[1] + arr[0] * arr[0]){
-//                System.out.println("right");
-//            }else{
-//                System.out.println("wrong");
-//            }
-//
-
+            sb.append(roomH).append("0").append(roomW).append('\n');
+//            System.out.printf("%d0%d\n", roomH, roomW);
         }
+        System.out.println(sb);
 
     }
 }
