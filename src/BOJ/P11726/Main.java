@@ -13,8 +13,10 @@ public class Main {
         dp[1] = 1;
         dp[2] = 2;
         for (int i = 3; i <= 1000; i++) {
-            dp[i] = (dp[i-2] + dp[i-1]) % 10007;
+            dp[i] = (dp[i - 2] + dp[i - 1]) % 10007;
         }
+//        dp[100] = 1234124 % 10007;
+//        dp[300] = dp[299]
         // 더해줄 때 마다 나머지 연산하는데 왜 제대로 된 값이 나오지
 
         System.out.println(dp[n]);
