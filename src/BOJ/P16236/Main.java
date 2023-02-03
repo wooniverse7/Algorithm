@@ -9,12 +9,12 @@ import java.util.StringTokenizer;
 
 public class Main {
     static int N; // 맵 크기
-    static int[][] map, dist; // 맵
+    static int[][] map, dist; // 맵, 거리(+방문배열)
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
     static int shark = 2, sharkX, sharkY; // 상어의 크기, 좌표
     static int eatCnt = 0;
-    final static int maxVal = 401, maxInt = 21;
+    final static int maxVal = 401, maxInt = 21; // 공간 최대 크기, 최대 거리
     static int minDist, minX, minY; // 물고기와의 최소 거리, 그 물고기의 좌표
     static int time = 0; // 걸린 시간
 

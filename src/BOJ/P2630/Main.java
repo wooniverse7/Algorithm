@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class Main {
     static int white, blue;
     static int[][] map;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
