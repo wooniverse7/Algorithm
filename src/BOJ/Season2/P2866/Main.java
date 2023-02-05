@@ -40,8 +40,7 @@ public class Main {
         for (int i = 0; i < R; i++) {
             HashMap<String, String> map = new HashMap<>();
             for (int j = 0; j < C; j++) {
-                // String.valueof( 원본 배열, 시작 인덱스, 개수);
-                String tmp = String.valueOf(rotate[j], i, R-i);
+                String tmp = String.valueOf(rotate[j], i, R-i); // String.valueof( 원본 배열, 시작 인덱스, 개수);
 //                System.out.println(tmp);
                 map.put(tmp, "");
             }
@@ -55,6 +54,7 @@ public class Main {
         System.out.println(cnt);
     }
 
+    // 첫번 째 시도 - 배열 만드는데 3중 for문이라 시간 초과
 //    static void main2(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        StringTokenizer st = new StringTokenizer(br.readLine());
