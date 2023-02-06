@@ -54,6 +54,7 @@ public class Main {
         System.out.println(cnt);
     }
 
+
     // 첫번 째 시도 - 배열 만드는데 3중 for문이라 시간 초과
 //    static void main2(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
