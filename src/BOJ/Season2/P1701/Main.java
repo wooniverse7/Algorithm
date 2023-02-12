@@ -14,8 +14,8 @@ public class Main {
         String str = br.readLine();
 
         // 초기 버전. 하나의 문자열만 중복 문자열 길이 구함
-        table = makeTable(str);
-        
+        table = makeTable(str); // abcdabcabb
+
         int max = 0;
         for (int i = 0; i < table.length; i++) {
             if(max < table[i]){
@@ -44,6 +44,9 @@ public class Main {
     static int[] makeTable(String pattern) {
         int n = pattern.length();
         int[] table = new int[n];
+
+//        abcdabcabb
+//        [0, 0, 0, 0, 1, 2, 3, 1, 2, 0]
 
         int idx=0;
         for(int i=1; i<n; i++) {
@@ -79,3 +82,7 @@ public class Main {
         return max;
     }
 }
+
+
+//ssakkdnascxabcabcasfdndwjq
+//abcabc 3
