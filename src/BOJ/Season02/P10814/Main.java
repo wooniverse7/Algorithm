@@ -1,4 +1,4 @@
-package BOJ.Season2.P10814;
+package BOJ.Season02.P10814;
 
 import java.io.BufferedReader;
 import java.io.IOException;

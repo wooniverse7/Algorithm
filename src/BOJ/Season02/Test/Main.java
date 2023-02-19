@@ -1,4 +1,4 @@
-package BOJ.Season2.Test;
+package BOJ.Season02.Test;
 
 public class Main {
     public static void main(String[] args) {
