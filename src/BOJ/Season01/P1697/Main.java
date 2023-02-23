@@ -1,4 +1,4 @@
-package P1697;
+package BOJ.Season01.P1697;
 
 import java.util.LinkedList;
 import java.util.Queue;
