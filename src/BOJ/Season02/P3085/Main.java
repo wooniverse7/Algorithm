@@ -1,9 +1,8 @@
-package BOJ.Season2.P3085;
+package BOJ.Season02.P3085;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Main {
     static int N;

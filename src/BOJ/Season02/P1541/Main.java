@@ -1,9 +1,8 @@
-package BOJ.Season2.P1541;
+package BOJ.Season02.P1541;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
