@@ -28,7 +28,7 @@ public class Main {
         // 가로방향 바꾸기
         for (int i = 0; i < N; i++) {
             for (int j = 1; j < N; j++) {
-//                copy = board; // 이렇게 복사하면 copy값을 바꿔도 board값도 변경된다. 깊은 복사인듯
+//                copy = board; // 이렇게 복사하면 copy값을 바꿔도 board값도 변경된다. 얕은 복사인듯
 
                 char tmp = board[i][j-1];
                 board[i][j-1] = board[i][j];
@@ -43,7 +43,7 @@ public class Main {
                 board[i][j] = tmp;
             }
         }
-        
+
         // 세로방향 바꾸기
         for (int i = 0; i < N; i++) {
             for (int j = 1; j < N; j++) {
