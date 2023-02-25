@@ -1,0 +1,48 @@
+
+유형 : 구현, 시뮬레이션
+
+가로 탐색
+ - 입력 받은 값을 2차원 배열로 map을 만들 수 있나
+ - 입력받은 값을 배열로 받아 하나씩 꺼내며 왼쪽 위에서부터 아래로 벽을 만듬
+ - 벽에서 부터 시작해서 다음 빈 공간이면 계속 탐색
+ - 그렇게 한 줄씩 쌓아나간다.
+  실패.
+
+  가장 높은 기둥을 기준으로
+
+좌우 높이를 활용한 풀이
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int h = scanner.nextInt();
+        int w = scanner.nextInt();
+        int[] blocks = new int[w];
+        for (int i = 0; i < w; i++) {
+            blocks[i] = scanner.nextInt();
+        }
+
+        int left = 0;
+        int right = w - 1;
+        int leftMax = blocks[left];
+        int rightMax = blocks[right];
+        int result = 0;
+
+        while (left < right) {
+            leftMax = Math.max(leftMax, blocks[left]);
+            rightMax = Math.max(rightMax, blocks[right]);
+
+            if (leftMax <= rightMax) {
+                result += leftMax - blocks[left];
+                left++;
+            } else {
+                result += rightMax - blocks[right];
+                right--;
+            }
+        }
+
+        System.out.println(result);
+    }
+}
