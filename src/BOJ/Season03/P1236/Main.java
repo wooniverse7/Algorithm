@@ -23,8 +23,6 @@ public class Main {
             oneLine[i] = br.readLine();
             for (int j = 0; j < M; j++) {
                 map[i][j] = oneLine[i].charAt(j);
-//                if(map[i][j] == '.') visited[i][j] = false;
-//                if(map[i][j] == 'X') visited[i][j] = true;
             }
         }
 
