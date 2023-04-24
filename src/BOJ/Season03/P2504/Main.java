@@ -11,12 +11,10 @@ public class Main {
         Stack<String> stack = new Stack<String>();
 
         // 모든 과정이 끝난 뒤에는 숫자만 남아야 한다.
-
         // 닫는 괄호일 때 스택 Top이 숫자일 경우 숫자를 pop하면서 전부 더하고 본인의 괄호 계산값을 더하여 다시 push
-
         // 닫는 괄호일 때 top이 괄호일 때, 본인 괄호 값만 더하고 스택에 push
 
-        boolean flag = true;
+        boolean flag = true; // 제대로 된 괄호 문자열인지 판별하는 flag
         for (int i = 0; i < str.length(); i++) {
             String tmp = str.substring(i, i+1);
 
@@ -35,7 +33,7 @@ public class Main {
             // 숫자가 나오면 flag = false. 숫자는 계속 합한다.
             // 짝이 맞으면 본인 괄호 크기에 합한 수를 곱한뒤 그 값을 push
             int num = 0;
-            while(true) {
+            while(true) { // 괄호가 빌 때 까지
                 // 짝 괄호가 없는데 스택이 비었을 때
                 if(stack.isEmpty()){
                     flag = false;
@@ -44,34 +42,38 @@ public class Main {
 
                 if(isNumber(stack.peek())){
                     // 숫자이면
-                    num += Integer.parseInt(stack.pop());
-                }else {
+                    num += Integer.parseInt(stack.pop()); // 한 구획의 점수
+                } else {
                     // 숫자가 아니면
-                    // 주어진 괄호와 top이 같으면
+                    // 주어진 괄호(닫는 괄호)와 top이 같으면
                     if(isVPS(tmp, stack.peek())){
                         stack.pop();
+                        // 소괄호면 2점, 대괄호면 3점
                         int t = (tmp.equals(")")) ? 2 : 3;
 
-                        if(num == 0) {
+                        if(num == 0) { // 한 짝의 괄호일 때
                             stack.push(String.valueOf(t));
-                        }else {
+                        }else { // 내부 괄호가 있을 때
                             stack.push(String.valueOf(t * num));
                         }
                         break;
-                    }else {
+                    } else { // 현재 주어진 괄호와 top과 다르면 다음 문자
                         flag = false;
                         break;
                     }
                 }
-            }
-            if(!flag) break;
-        }
 
+            } // while : stack에 숫자만 남을 때 까지 반복
+            if(!flag) break;
+        } // for()
+
+        // 결과 합산하기기
         int rst = 0;
 
         // 스택이 빌 때 까지 pop
         // 정상적인 문자열이라면 숫자만 남아있어야 함
         while(!stack.isEmpty()){
+            // stack의 top이
             if(isNumber(stack.peek())) {
                 rst += Integer.parseInt(stack.pop());
             }else {
@@ -90,6 +92,7 @@ public class Main {
         return true;
     }
 
+    // Valid PS(올바른 괄호 문자열)
     public static boolean isVPS(String tmp, String target) {
         if(tmp.equals(target)) return true;
         return false;
