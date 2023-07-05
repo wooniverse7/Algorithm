@@ -48,6 +48,11 @@ public class Main {
             pw[depth] = abc[i];
             reculsion(depth+1, i+1);
         }
+        // a t c i s w
+        // a t c i
+        // a t c s
+        // a t c w
+        // a t i s
     }
 
     public static boolean check() {
