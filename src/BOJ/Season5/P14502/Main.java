@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -68,7 +69,7 @@ public class Main {
 
     // 바이러스 퍼뜨리기
     public static void bfs(){
-        Queue<virus> q = new ArrayDeque<>(); // 큐 구현시 LinkedList보다 ArrayDeque가 성능이 더 좋다고 한다.
+        Queue<virus> q = new LinkedList<>(); // 큐 구현시 LinkedList보다 ArrayDeque가 성능이 더 좋다고 한다.
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {

@@ -20,7 +20,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             k = Integer.parseInt(st.nextToken());
-            TreeMap cur = map; // 현재 탐색 노드. 자식 노드들을 저장
+            TreeMap<String, TreeMap> cur = map; // 현재 탐색 노드. 자식 노드들을 저장
 
             for (int j = 0; j < k; j++) {
                 String food = st.nextToken();
@@ -28,7 +28,10 @@ public class Main {
                 if(cur.get(food) == null) {
                     cur.put(food, new TreeMap<>());
                 }
-                cur = (TreeMap) cur.get(food); // 다음 계층으로 갱신(for 계층구조)
+                cur = (TreeMap) cur.get(food); // 다음 계층으로 갱신(for 계층구조)?
+//                for(String s : map.keySet()) {
+//                    System.out.println("Key : " + s + ", Value : " + cur.get(s));
+//                }
             }
         }
 
