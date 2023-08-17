@@ -7,27 +7,19 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         String str = br.readLine();
-        char c = br.readLine().charAt(0);
-        if(c < 'a') {
-            c += 32;
+        int lf = 0;
+        int rt = str.length() - 1;
+
+        while(lf > rt) {
+
         }
 
-        char[] arr = new char[str.length()];
-        for (int i = 0; i < str.length(); i++) {
-            char tmp = str.charAt(i);
-            if(tmp < 'a'){
-                tmp += 32;
-            }
-            arr[i] = tmp;
-        }
-
-        int cnt = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == c) cnt++;
-        }
-
-        System.out.println(cnt);
     }
 }
+
+// kdj#@kdjg%$#kdjgk@kd$dk
+// kdd#@kkgj%$#dkgjd@kj$dk
+
