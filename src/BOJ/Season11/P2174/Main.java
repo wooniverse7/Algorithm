@@ -1,4 +1,4 @@
-package BOJ.Test;
+package BOJ.Season11.P2174;
 
 import java.io.*;
 import java.util.StringTokenizer;
